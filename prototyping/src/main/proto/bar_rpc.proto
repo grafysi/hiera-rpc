@@ -1,0 +1,27 @@
+syntax="proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grafysi.hierarpc.prototyping.foobar.proto";
+option java_outer_classname = "BarServiceProto";
+
+package hierarpc.prototyping.foobar;
+
+service BarService {
+  rpc CreateBar(BarCreateRequest) returns (BarMessage) {}
+  rpc GetBar(BarGetRequest) returns (BarMessage) {}
+}
+
+message BarCreateRequest {
+  string name = 1;
+  string content = 2;
+}
+
+message BarGetRequest {
+  int32 id = 1;
+}
+
+message BarMessage {
+  int32 id = 1;
+  string name = 2;
+  string content = 3;
+}

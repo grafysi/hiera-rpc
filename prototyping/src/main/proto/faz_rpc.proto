@@ -1,0 +1,32 @@
+syntax="proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grafysi.hierarpc.prototyping.foobaz.proto";
+option java_outer_classname = "FazServiceProto";
+
+package hierarpc.prototyping.foobaz;
+
+service FazService {
+  rpc CreateFaz(FazCreateRequest) returns (FazMessage) {}
+  rpc GetFaz(FazGetRequest) returns (FazMessage) {}
+}
+
+service FazCopyService {
+  rpc CreateFazCopy(FazCreateRequest) returns (FazMessage) {}
+  rpc GetFazCopy(FazGetRequest) returns (FazMessage) {}
+}
+
+message FazCreateRequest {
+  string name = 1;
+  string content = 2;
+}
+
+message FazGetRequest {
+  int32 id = 1;
+}
+
+message FazMessage {
+  int32 id = 1;
+  string name = 2;
+  string content = 3;
+}

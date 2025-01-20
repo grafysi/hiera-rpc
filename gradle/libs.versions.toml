@@ -1,0 +1,35 @@
+[plugins]
+lombok = { id = "io.freefair.lombok", version = "8.10.2" }
+protobuf = { id = "com.google.protobuf", version = "0.9.4" }
+
+[versions]
+grpc-java = "1.69.0"
+annotation-api = "6.0.53"
+protoc = "3.25.5"
+slf4j-api = "2.0.16"
+log4j-impl = "2.24.3"
+spring = "6.2.1"
+junit = "5.11.4"
+byte-buddy = "1.15.11"
+
+
+[libraries]
+grpc-netty-shaded = { module = "io.grpc:grpc-netty-shaded", version.ref = "grpc-java" }
+grpc-protobuf = { module = "io.grpc:grpc-protobuf", version.ref = "grpc-java" }
+grpc-stub = { module = "io.grpc:grpc-stub", version.ref = "grpc-java" }
+annotations-api = { module = "org.apache.tomcat:annotations-api", version.ref = "annotation-api"}
+
+byte-buddy = { module = "net.bytebuddy:byte-buddy", version.ref = "byte-buddy"}
+
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j-api" }
+log4j-slf4j2-impl = { module = "org.apache.logging.log4j:log4j-slf4j2-impl", version.ref = "log4j-impl" }
+
+protoc-core = { module = "com.google.protobuf:protoc", version.ref = "protoc" }
+protoc-gen-grpc = { module = "io.grpc:protoc-gen-grpc-java", version.ref = "grpc-java" }
+
+
+spring-context = {module = "org.springframework:spring-context", version.ref = "spring"}
+spring-test = {module = "org.springframework:spring-test", version.ref = "spring"}
+
+junit-jupyter = {module = "org.junit.jupiter:junit-jupiter", version.ref = "junit"}
+junit-bom = {module = "org.junit:junit-bom", version.ref = "junit"}

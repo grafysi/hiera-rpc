@@ -1,0 +1,38 @@
+syntax="proto3";
+
+option java_multiple_files = true;
+option java_package = "com.grafysi.hierarpc.prototyping.foobar.proto";
+option java_outer_classname = "FooServiceProto";
+
+package hierarpc.prototyping.foobar;
+
+service FooService {
+  rpc CreateFoo(FooCreateRequest) returns (FooMessage) {}
+  rpc GetFoo(FooGetRequest) returns (FooMessage) {}
+  rpc SubscribeFoo(SubscribeFooRequest) returns (stream FooMessage) {}
+  rpc PublishFoo(stream FooMessage) returns (PublishFooResponse) {}
+  rpc ProcessFoo(stream FooMessage) returns (stream FooMessage) {}
+}
+
+message FooCreateRequest {
+  string name = 1;
+  string content = 2;
+}
+
+message FooGetRequest {
+  int32 id = 1;
+}
+
+message SubscribeFooRequest {
+
+}
+
+message PublishFooResponse {
+
+}
+
+message FooMessage {
+  int32 id = 1;
+  string name = 2;
+  string content = 3;
+}
